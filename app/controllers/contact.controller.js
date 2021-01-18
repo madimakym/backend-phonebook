@@ -116,3 +116,22 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+exports.findAllPublished = (req, res) => {
+  const key = req.params.key;
+  Contact.find({
+    $or: [
+      { firstname: { $regex: new RegExp(key, "i") } },
+      { phonenumber: key },
+    ],
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+};

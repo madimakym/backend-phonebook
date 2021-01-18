@@ -15,6 +15,6 @@ npm install
 npm run watch
 
 
-Open [http://localhost:5000/api/contact](http://localhost:5000/api/contact) to view it in the browser.
+Open (http://localhost:5000/api/contact) to view it in the browser.
 
 The page will reload if you make edits.

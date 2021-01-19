@@ -122,7 +122,8 @@ exports.findAllPublished = (req, res) => {
   Contact.find({
     $or: [
       { firstname: { $regex: new RegExp(key, "i") } },
-      { phonenumber: key },
+      { lastname: { $regex: new RegExp(key, "i") } },
+      { phonenumber: { $regex: new RegExp(key, "i") } },
     ],
   })
     .then((data) => {
